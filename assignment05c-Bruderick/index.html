@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script>
+        $( document ).ready(function() { 
+            roundsRequest("displayList");
+        });
+        
+        // Submit a request to the rounds table.
+        function roundsRequest(action, id) {
+            $.post(
+                "index.php",
+                "table="   + "rounds"          +
+                "&action=" + action             +
+                "&id="     + id                 +
+                "&roundName="   + $("#userID").val()   +
+                "&roundName="   + $("#courseID").val()   +
+                "&roundName="   + $("#seqNum").val()   +
+                "&hole1="  + $("#hole1").val()  +
+                "&hole2="  + $("#hole2").val()  +
+                "&hole3="  + $("#hole3").val()  +
+                "&hole4="  + $("#hole4").val()  +
+                "&hole5="  + $("#hole5").val()  +
+                "&hole6="  + $("#hole6").val()  +
+                "&hole7="  + $("#hole7").val()  +
+                "&hole8="  + $("#hole8").val()  +
+                "&hole9="  + $("#hole9").val()  +
+                "&hole10="  + $("#hole10").val()  +
+                "&hole11="  + $("#hole11").val()  +
+                "&hole12="  + $("#hole12").val()  +
+                "&hole13="  + $("#hole13").val()  +
+                "&hole14="  + $("#hole14").val()  +
+                "&hole15="  + $("#hole15").val()  +
+                "&hole16="  + $("#hole16").val()  +
+                "&hole17="  + $("#hole17").val()  +
+                "&hole18="  + $("#hole18").val()
+            ).done(function( msg ) { 
+                $("#content").html( msg );
+            });
+        }
+    </script>
+    <style>
+        .btn {
+            width: 75px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>

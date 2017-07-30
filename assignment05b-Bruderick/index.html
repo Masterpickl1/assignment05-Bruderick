@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script>
+        $( document ).ready(function() { 
+            coursesRequest("displayList");
+        });
+        
+        // Submit a request to the courses table.
+        function coursesRequest(action, id) {
+            $.post(
+                "index.php",
+                "table="   + "courses"          +
+                "&action=" + action             +
+                "&id="     + id                 +
+                "&courseName="   + $("#courseName").val()   +
+                "&holePar1="  + $("#holePar1").val()  +
+                "&holePar2="  + $("#holePar2").val()  +
+                "&holePar3="  + $("#holePar3").val()  +
+                "&holePar4="  + $("#holePar4").val()  +
+                "&holePar5="  + $("#holePar5").val()  +
+                "&holePar6="  + $("#holePar6").val()  +
+                "&holePar7="  + $("#holePar7").val()  +
+                "&holePar8="  + $("#holePar8").val()  +
+                "&holePar9="  + $("#holePar9").val()  +
+                "&holePar10="  + $("#holePar10").val()  +
+                "&holePar11="  + $("#holePar11").val()  +
+                "&holePar12="  + $("#holePar12").val()  +
+                "&holePar13="  + $("#holePar13").val()  +
+                "&holePar14="  + $("#holePar14").val()  +
+                "&holePar15="  + $("#holePar15").val()  +
+                "&holePar16="  + $("#holePar16").val()  +
+                "&holePar17="  + $("#holePar17").val()  +
+                "&holePar18="  + $("#holePar18").val()
+            ).done(function( msg ) { 
+                $("#content").html( msg );
+            });
+        }
+    </script>
+    <style>
+        .btn {
+            width: 75px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>
